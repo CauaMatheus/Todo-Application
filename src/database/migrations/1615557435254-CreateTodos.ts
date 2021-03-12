@@ -30,6 +30,7 @@ export default class CreateTodos1615557435254 implements MigrationInterface {
           {
             name: 'deadline',
             type: 'timestamp',
+            isNullable: true,
           },
           {
             name: 'created_at',
