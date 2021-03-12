@@ -1,7 +1,8 @@
 import express from 'express';
+import userController from './controllers/UserController';
 
 const router = express.Router();
 
-router.get('/', (request, response) => response.json({ message: 'Hello World!' }));
+router.post('/register', userController.create);
 
 export default router;

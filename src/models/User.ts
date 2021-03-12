@@ -21,12 +21,12 @@ class User {
   password: string
 
   @Column()
-  pro: boolean
+  pro: boolean = false
 
   @Column()
-  confirmed: boolean
+  confirmed: boolean = false
 
-  @Column()
+  @Column('text', { array: true })
   friends: string[] = []
 
   @CreateDateColumn()
