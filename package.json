@@ -5,10 +5,13 @@
   "author": "CauaMatheus <caua10000@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev ./src/index.ts --transpile-only --ignore-watch node_modules --respawn"
+    "dev": "ts-node-dev ./src/index.ts --transpile-only --ignore-watch node_modules --respawn",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.31"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
