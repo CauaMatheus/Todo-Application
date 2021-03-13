@@ -1,11 +1,7 @@
 import { Request, Response } from 'express';
-import CreateUser from './CreateUser';
-import FindUserById from './FindUserById';
-import AuthenticateUser from './AuthenticateUser';
-
-const createUser = new CreateUser();
-const findUserById = new FindUserById();
-const auhtenticateUser = new AuthenticateUser();
+import createUser from './CreateUser';
+import findUserById from './FindUserById';
+import authenticateUser from './AuthenticateUser';
 
 class UserController {
   async create(request: Request, response: Response) {
@@ -17,7 +13,7 @@ class UserController {
   }
 
   async authenticate(request: Request, response: Response) {
-    auhtenticateUser.execute(request, response);
+    authenticateUser.execute(request, response);
   }
 }
 

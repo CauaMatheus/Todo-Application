@@ -5,7 +5,7 @@ import bcrypt from 'bcrypt';
 import UserRepository from '../../repositories/UserRepository';
 import dotEnv from '../../.env';
 
-export default class AuthenticateUser {
+class AuthenticateUser {
   async execute(request: Request, response: Response) {
     const { email, password } = request.body;
     const usersRepository = getCustomRepository(UserRepository);
@@ -25,3 +25,6 @@ export default class AuthenticateUser {
     return response.json({ token });
   }
 }
+
+const authenticateUser = new AuthenticateUser();
+export default authenticateUser;

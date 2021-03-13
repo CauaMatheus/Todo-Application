@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import { getCustomRepository } from 'typeorm';
 import UserRepository from '../../repositories/UserRepository';
 
-export default class CreateUser {
+class CreateUser {
   async execute(request: Request, response: Response) {
     const { username, email, password } = request.body;
     const usersRepository = getCustomRepository(UserRepository);
@@ -25,3 +25,5 @@ export default class CreateUser {
     }
   }
 }
+const createUser = new CreateUser();
+export default createUser;

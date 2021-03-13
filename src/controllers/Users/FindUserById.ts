@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { getCustomRepository } from 'typeorm';
 import UserRepository from '../../repositories/UserRepository';
 
-export default class FindUserById {
+class FindUserById {
   async execute(request: Request, response: Response) {
     const { id } = request.params;
     const usersRepository = getCustomRepository(UserRepository);
@@ -16,3 +16,5 @@ export default class FindUserById {
     return response.json(user);
   }
 }
+const findUserById = new FindUserById();
+export default findUserById;
