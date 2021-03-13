@@ -12,7 +12,7 @@ class Todos {
   @Column()
   userId: string
 
-  @ManyToOne(() => User)
+  @ManyToOne(() => User, (user) => user.id)
   @JoinColumn({ name: 'userId' })
   user: User
 
@@ -23,7 +23,7 @@ class Todos {
   description: string
 
   @Column()
-  state: boolean
+  state: boolean = false
 
   @CreateDateColumn()
   deadline: Date
@@ -32,7 +32,7 @@ class Todos {
   created_at: Date = new Date()
 
   constructor() {
-    if (this.id) {
+    if (!this.id) {
       this.id = uuid();
     }
   }

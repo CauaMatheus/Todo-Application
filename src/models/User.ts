@@ -6,10 +6,10 @@ import { v4 as uuid } from 'uuid';
 @Entity('users')
 class User {
   @PrimaryColumn()
-  _id: string
+  id: string
 
   @Column()
-  id: string
+  _id: string
 
   @Column()
   username: string

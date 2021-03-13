@@ -7,12 +7,12 @@ export default class CreateUsers1615555064130 implements MigrationInterface {
         name: 'users',
         columns: [
           {
-            name: '_id',
+            name: 'id',
             type: 'uuid',
             isPrimary: true,
           },
           {
-            name: 'id',
+            name: '_id',
             type: 'uuid',
           },
           {
