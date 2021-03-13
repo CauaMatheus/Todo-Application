@@ -8,6 +8,10 @@ export default class FindUserById {
     const usersRepository = getCustomRepository(UserRepository);
 
     const user = await usersRepository.findOne({ id });
+    if (!user) {
+      return response.status(404).json({ message: 'User not found' });
+    }
+
     Object.assign(user, { _id: undefined, password: undefined });
     return response.json(user);
   }

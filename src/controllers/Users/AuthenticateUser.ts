@@ -12,12 +12,12 @@ export default class AuthenticateUser {
 
     const user = await usersRepository.findOne({ email });
     if (!user) {
-      return response.json(404).json({ message: 'User does not exist' });
+      return response.json(404).json({ message: 'User not found' });
     }
 
     const isValidPassword = bcrypt.compare(password, user.password);
     if (!isValidPassword) {
-      return response.status(404).json({ message: 'Password does not match' });
+      return response.status(400).json({ message: 'Password does not match' });
     }
 
     const token = jwt.sign({ _id: user._id, id: user.id }, dotEnv.secrectKey, { expiresIn: '7d' });
