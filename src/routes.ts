@@ -13,6 +13,8 @@ router.use(verifyIfIsAnValidToken.execute);
 
 router.put('/profile', userController.update);
 router.delete('/profile', userController.delete);
+
 router.post('/todos', todoController.create);
+router.put('/todos/:todoId', todoController.update);
 
 export default router;

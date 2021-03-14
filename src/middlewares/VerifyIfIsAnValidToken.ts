@@ -17,7 +17,8 @@ class VerifyIfIsAnValidToken {
     }
 
     try {
-      const { _id } = jwt.verify(authorization, dotEnv.secrectKey) as TokenPayload;
+      const { _id, id } = jwt.verify(authorization, dotEnv.secrectKey) as TokenPayload;
+      request.id = id;
       request.userId = _id;
       return next();
     } catch {
