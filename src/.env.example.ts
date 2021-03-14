@@ -1,4 +1,7 @@
 const dotEnv = {
-  secrectKey: ''
+  secrectKey: '',
+  mailUser: '',
+  mailPassword: '',
+  serverBaseURL: ''
 }
 export default dotEnv;
