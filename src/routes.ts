@@ -17,5 +17,6 @@ router.delete('/profile', userController.delete);
 
 router.post('/todos', todoController.create);
 router.put('/todos/:todoId', todoController.update);
+router.delete('/todos/:todoId', todoController.delete);
 
 export default router;
