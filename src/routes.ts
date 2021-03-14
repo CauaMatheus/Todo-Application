@@ -7,7 +7,8 @@ const router = express.Router();
 
 router.post('/signup', userController.create);
 router.post('/signin', userController.authenticate);
-router.get('/users/:id', userController.findById);
+router.get('/users/profile/:id', userController.findById);
+router.get('/users/todos/:id', todoController.list);
 
 router.use(verifyIfIsAnValidToken.execute);
 
