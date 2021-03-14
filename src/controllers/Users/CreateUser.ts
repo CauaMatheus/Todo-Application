@@ -1,7 +1,10 @@
 import { Request, Response } from 'express';
 import bcrypt from 'bcrypt';
 import { getCustomRepository } from 'typeorm';
+import jwt from 'jsonwebtoken';
 import UserRepository from '../../repositories/UserRepository';
+import mailProvider from '../../providers/MailTrapMailProvider';
+import dotEnv from '../../.env';
 
 class CreateUser {
   async execute(request: Request, response: Response) {
@@ -18,6 +21,21 @@ class CreateUser {
 
       const user = usersRepository.create({ username, email, password: hashedPassword });
       await usersRepository.save(user);
+
+      const validateEmailJWT = jwt.sign({ email: user.email }, dotEnv.secrectKey);
+      await mailProvider.sendMail({
+        to: {
+          name: user.username,
+          email: user.email,
+        },
+        from: {
+          name: 'Farukkon company',
+          email: 'smtp.mailtrap.io',
+        },
+        subject: 'Confirm your email',
+        body: `<p> We received a request from ${user.username} for validate your email ${user.email}</p>
+        <p>Click <a href="${dotEnv.serverBaseURL}/validateEmail/${validateEmailJWT}">here</a> to validate your email</p>`,
+      });
 
       return response.status(201).json(user);
     } catch {

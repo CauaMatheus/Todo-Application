@@ -9,6 +9,7 @@ router.post('/signup', userController.create);
 router.post('/signin', userController.authenticate);
 router.get('/users/profile/:id', userController.findById);
 router.get('/users/todos/:id', todoController.list);
+router.get('/validateEmail/:token', userController.validate);
 
 router.use(verifyIfIsAnValidToken.execute);
 

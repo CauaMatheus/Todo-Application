@@ -4,6 +4,7 @@ import findUserById from './FindUserById';
 import authenticateUser from './AuthenticateUser';
 import updateUser from './UpdateUser';
 import deleteUser from './DeleteUser';
+import validateEmail from './ValidateEmail';
 
 class UserController {
   async create(request: Request, response: Response) {
@@ -24,6 +25,10 @@ class UserController {
 
   async authenticate(request: Request, response: Response) {
     authenticateUser.execute(request, response);
+  }
+
+  async validate(request: Request, response: Response) {
+    validateEmail.execute(request, response);
   }
 }
 
