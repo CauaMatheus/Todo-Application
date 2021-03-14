@@ -36,7 +36,7 @@ class CreateUser {
         body: `<p> We received a request from ${user.username} for validate your email ${user.email}</p>
         <p>Click <a href="${dotEnv.serverBaseURL}/validateEmail/${validateEmailJWT}">here</a> to validate your email</p>`,
       });
-
+      Object.assign(user, { _id: undefined, password: undefined });
       return response.status(201).json(user);
     } catch {
       return response.status(500).json({ error: 'Internal server error' });
