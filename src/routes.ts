@@ -14,6 +14,7 @@ router.get('/validateEmail/:token', userController.validate);
 router.use(verifyIfIsAnValidToken.execute);
 
 router.put('/profile', userController.update);
+router.patch('/profile/upgrade', userController.upgrade);
 router.delete('/profile', userController.delete);
 
 router.post('/todos', todoController.create);
