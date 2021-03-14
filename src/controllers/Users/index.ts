@@ -3,6 +3,7 @@ import createUser from './CreateUser';
 import findUserById from './FindUserById';
 import authenticateUser from './AuthenticateUser';
 import updateUser from './UpdateUser';
+import deleteUser from './DeleteUser';
 
 class UserController {
   async create(request: Request, response: Response) {
@@ -15,6 +16,10 @@ class UserController {
 
   async update(request: Request, response: Response) {
     updateUser.execute(request, response);
+  }
+
+  async delete(request: Request, response: Response) {
+    deleteUser.execute(request, response);
   }
 
   async authenticate(request: Request, response: Response) {
