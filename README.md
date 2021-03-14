@@ -1,21 +1,21 @@
 <h1 align="center"> Todo Application</h1>
 
 ## Sumário:
-- 💬 [Descrição](#description)
-- 👨‍💻 [Tecnologias](#technologies)
+- 💬 [Descrição](#-descrição)
+- 👨‍💻 [Tecnologias](#-tecnologias)
 - [🔗 Rotas da aplicação](#-rotas-da-aplicação)
-  - [POST `/signup`]()
-  - [POST `/signin`]()
-  - [GET `/users/profile/:id`]()
-  - [GET `/users/todos/:id`]()
-  - [GET `/validateEmail/:token`]()
-  - [PUT `/profile`]()
-  - [PATCH `/profile/upgrade`]()
-  - [DELETE `/profile`]()
-  - [POST `/todos`]()
-  - [PUT `/todos/:todoId`]()
-  - [DELETE `/todos/:todoId`]()
-- 📦️ [Como usar](#clone)
+  - [POST `/signup`](#post-signup)
+  - [POST `/signin`](#post-signin)
+  - [GET `/validateEmail/:token`](#get-validateemailtoken)
+  - [GET `/users/profile/:id`](#get-usersprofileid)
+  - [PUT `/profile`](#put-profile)
+  - [PATCH `/profile/upgrade`](#patch-profileupgrade)
+  - [DELETE `/profile`](#delete-profile)
+  - [POST `/todos`](#post-todos)
+  - [GET `/users/todos/:id`](#get-userstodosid)
+  - [PUT `/todos/:todoId`](#put-todostodoid)
+  - [DELETE `/todos/:todoId`](#delete-todostodoid)
+- [📦️ Como usar](#%EF%B8%8F-como-usar)
 
 
 ## 💬 Descrição
